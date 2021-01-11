@@ -118,15 +118,56 @@ button {
   border-radius: 10px;
 }
 
-.form-container form input {
-  flex: 1;
-  padding: 15px;
+.form-container form div {
+  position: relative;
+  display: flex;
+  align-items: center;
   border-radius: 5px;
   border: 1px solid var(--clr-grayishblue-neutral);
 }
 
-.form-container form input + input {
-  margin-top: 15px;
+.form-container form div img {
+  display: none;
+  opacity: 0;
+}
+
+.form-container form div.error {
+  border: 1px solid var(--clr-red-primary);
+  color: var(--clr-red-primary);
+}
+
+.form-container form div.error img {
+  display: inline-block;
+  opacity: 1;
+  position: absolute;
+  width: 25px;
+  height: 50%;
+  right: 10px;
+}
+
+.form-container form div ~ small {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.form-container form div ~ small.error {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  text-align: right;
+  margin: 5px 0 10px;
+  font-size: 1.2rem;
+  color: var(--clr-red-primary);
+  font-style: italic;
+  font-weight: var(--fw-semibold);
+}
+
+.form-container form div input {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background: transparent;
 }
 
 .form-container form input:focus::placeholder {
@@ -153,7 +194,10 @@ button {
   border-radius: 5px;
 }
 
-.form-container form small {
+.form-container form .text-small {
+  display: block;
+  visibility: visible;
+  opacity: 1;
   text-align: center;
   color: var(--clr-grayishblue-neutral);
   font-size: 1.1rem;
@@ -161,7 +205,7 @@ button {
   line-height: 1.9;
 }
 
-.form-container form small a {
+.form-container form .text-small a {
   font-weight: var(--fw-bold);
   color: var(--clr-red-primary);
   text-decoration: none;
