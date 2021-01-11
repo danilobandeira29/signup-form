@@ -67,7 +67,9 @@ button {
   margin-bottom: 20px;
 }
 
-.container > section button{
+.container > section button {
+  position: relative;
+
   width: 100%;
 
   font-size: 1.6rem;
@@ -80,7 +82,19 @@ button {
   border-radius: 10px;
   padding: 20px;
 
-  box-shadow: 0 8px 6px -6px var(--clr-black-primary); 
+}
+
+.container > section button::after {
+  position: absolute;
+  content: '';
+  width: 100%;
+  bottom: -8px;
+  left: 0;
+  height: 25px;
+  background:rgb(0, 0, 0);
+  opacity: .2;
+  z-index: -1;
+  border-radius: 10px;
 }
 
 .container > section button span {
