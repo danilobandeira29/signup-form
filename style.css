@@ -34,9 +34,13 @@ body {
   background-color: var(--clr-red-primary);
 }
 
+input, button {
+  font-family: var(--ff-primary);
+}
+
 button {
   cursor: pointer;
-  font-family: var(--ff-primary);
+  
 }
 
 .container {
@@ -64,7 +68,7 @@ button {
 }
 
 .container > section {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .container > section button {
@@ -91,7 +95,7 @@ button {
   bottom: -8px;
   left: 0;
   height: 25px;
-  background:rgb(0, 0, 0);
+  background:var(--clr-black-primary);
   opacity: .2;
   z-index: -1;
   border-radius: 10px;
@@ -103,4 +107,62 @@ button {
 
 .container > section button p {
   font-weight: var(--fw-regular);
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--clr-white-primary);
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.form-container form input {
+  flex: 1;
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--clr-grayishblue-neutral);
+}
+
+.form-container form input + input {
+  margin-top: 15px;
+}
+
+.form-container form input:focus::placeholder {
+  opacity: 0;
+}
+
+.form-container form input::placeholder {
+  color: var(--clr-darkblue-neutral);
+  font-weight: var(--fw-bold);
+  opacity: .7;
+}
+
+.form-container form button {
+  margin: 15px 0;
+
+  text-transform: uppercase;
+  background: var(--clr-green-primary);
+  color: var(--clr-white-primary);
+  font-weight: var(--fw-medium);
+  letter-spacing: 2px;
+
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+}
+
+.form-container form small {
+  text-align: center;
+  color: var(--clr-grayishblue-neutral);
+  font-size: 1.1rem;
+  font-weight: var(--fw-medium);
+  line-height: 1.9;
+}
+
+.form-container form small a {
+  font-weight: var(--fw-bold);
+  color: var(--clr-red-primary);
+  text-decoration: none;
 }
