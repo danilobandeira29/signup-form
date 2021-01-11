@@ -67,11 +67,11 @@ button {
   opacity: .9;
 }
 
-.container > section {
+.content > section {
   margin-bottom: 30px;
 }
 
-.container > section button {
+.content > section button {
   position: relative;
 
   width: 100%;
@@ -88,7 +88,7 @@ button {
 
 }
 
-.container > section button::after {
+.content > section button::after {
   position: absolute;
   content: '';
   width: 100%;
@@ -101,11 +101,11 @@ button {
   border-radius: 10px;
 }
 
-.container > section button span {
+.content > section button span {
   font-weight: var(--fw-bold);
 }
 
-.container > section button p {
+.content > section button p {
   font-weight: var(--fw-regular);
 }
 
@@ -141,8 +141,8 @@ button {
   opacity: 1;
   position: absolute;
   width: 25px;
-  height: 50%;
-  right: 10px;
+  height: 25px;
+  right: 1rem;
 }
 
 .form-container form div ~ small {
@@ -168,6 +168,7 @@ button {
   padding: 15px;
   border: none;
   background: transparent;
+  font-weight: var(--fw-semibold);
 }
 
 .form-container form input:focus::placeholder {
@@ -209,4 +210,65 @@ button {
   font-weight: var(--fw-bold);
   color: var(--clr-red-primary);
   text-decoration: none;
+}
+
+@media (min-width: 1440px) {
+  body {
+    background: url('./images/bg-intro-desktop.png') no-repeat center var(--clr-red-primary);
+  }
+
+  .container {
+    width: 100vw;
+    max-width: 1440px;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  header {
+    max-width: 50%;
+  }
+
+  .title-primary {
+    font-size: 5rem;
+    width: 16ch;
+    text-align: left;
+  }
+
+  .title-neutral {
+    text-align: left;
+  }
+
+  .content {
+    width: 40%;
+  }
+
+  .form-container form {
+    padding: 4rem;
+  }
+
+  .form-container form div input {
+    padding: 2rem;
+  }
+
+  .form-container form div.error img {
+    width: 25px;
+    height: 25px;
+    right: 2.5rem;
+  }
+
+  .content > section button br {
+    display: none;
+  }
+
+  .form-container form .text-small {
+    text-align: left;
+  }
+
+  .form-container form .text-small br {
+    display: none;
+  }
+
 }
