@@ -2,9 +2,14 @@
 
 :root {
   --ff-primary: 'Poppins', sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
 
   --clr-red-primary: hsl(0, 100%, 74%);
   --clr-green-primary: hsl(154, 59%, 51%);
+  --clr-black-primary: rgb(0, 0, 0);
   --clr-white-primary: rgb(255, 255, 255);
   --clr-blue-accent: hsl(248, 32%, 49%);
   --clr-darkblue-neutral: hsl(249, 10%, 26%);
@@ -29,6 +34,11 @@ body {
   background-color: var(--clr-red-primary);
 }
 
+button {
+  cursor: pointer;
+  font-family: var(--ff-primary);
+}
+
 .container {
   max-width: 375px;
   margin: 0 auto;
@@ -48,7 +58,35 @@ body {
 
 .title-neutral {
   font-size: 1.7rem;
-  font-weight: 400;
+  font-weight: var(--fw-regular);
   color: var(--clr-white-primary);
   opacity: .9;
+}
+
+.container > section {
+  margin-bottom: 20px;
+}
+
+.container > section button{
+  width: 100%;
+
+  font-size: 1.6rem;
+  text-align: center;
+
+  background: var(--clr-blue-accent);
+  color: var(--clr-white-primary);
+
+  border: none;
+  border-radius: 10px;
+  padding: 20px;
+
+  box-shadow: 0 8px 6px -6px var(--clr-black-primary); 
+}
+
+.container > section button span {
+  font-weight: var(--fw-bold);
+}
+
+.container > section button p {
+  font-weight: var(--fw-regular);
 }
