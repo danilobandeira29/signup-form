@@ -6,17 +6,19 @@ const submitFormButton = document.querySelector('.form-container form button');
 
 submitFormButton.addEventListener('click', function(event) {
   event.preventDefault();
+  const emailRegExp = new RegExp(/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i);
 
-  const isValidEmail = new RegExp(/^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i);
-  
-  for(let i = 0; i < inputElements.length; i++) {
-    if(!inputElements[i].value || inputElements[i].type === 'email' && !isValidEmail.test(inputElements[i].value)) {
-      inputContainers[i].classList.add('error');
-      errorMessageElements[i].classList.add('error');
+  inputElements.forEach( function (item, index) {
+    const isValidEmail = emailRegExp.test(item.value);
+    const itemTypeEmail = item.type === 'email' ?? false;
+
+    if(!item.value || itemTypeEmail === !isValidEmail) {
+      inputContainers[index].classList.add('error');
+      errorMessageElements[index].classList.add('error');
     } else {
-      inputContainers[i].classList.remove('error');
-      errorMessageElements[i].classList.remove('error');
+      inputContainers[index].classList.remove('error');
+      errorMessageElements[index].classList.remove('error');
     }
-  }
+  })
 
 })
